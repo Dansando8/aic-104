@@ -8,10 +8,10 @@ This step is important to get a better representation of the elevator data that 
 This step will allow to process and create new features that depend on time. In this case the model will have ease to predict with more accurancy and prevent lekeage. 
 
 ### Combining Text Columns in Inspection Orders Dataset
-Create a new column by combining the text from the "DIRECTIVE" and "Inspections additional information" columns.
+This would simplify to process the text processing with LPN. Also reduces redundancy. 
 
 ### Addressing Missing "RISK SCORE" Values
-Identify missing "RISK SCORE" values in the Inspection Orders dataset and propose a solution based on quantitative analysis with justification.
+Replaced missing values with median and then used scaler to normalize. This assures that the data is messured on the same scale. 
 
 ### Grouping Rare Categories in Inspection Outcome
 Group all categories with fewer than 500 observations in the Inspection Outcome variable into an "Other" category.
