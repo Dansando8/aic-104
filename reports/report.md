@@ -1,26 +1,23 @@
 # Data Aggregation
 
-## Preliminary analysis/preparation of aggregation
 ### Matching Inspection Numbers Across Datasets
-This step is important to get a better representation of the elevator data that is on the two data sets, so we assure that the predictions will be consitent. There might be missing data. Also, inspections without orders may represent errors in data entry or bad imports.
+To improve the consistency of predictions, this step focuses on obtaining a better representation of the elevator data from the two datasets. This includes addressing potential missing data. Additionally, inspections without associated orders may indicate data entry errors or import issues.
 
 ### Chronological Sorting of Datasets
-This step will allow to process and create new features that depend on time. In this case the model will have ease to predict with more accurancy and prevent lekeage. 
+This step enables the processing and creation of time-dependent features, enhancing the model's predictive accuracy and preventing leakage.
 
 ### Combining Text Columns in Inspection Orders Dataset
-This would simplify to process the text processing with LPN. Also reduces redundancy. 
+Simplifying text processing with LPN would reduce redundancy.
 
 ### Addressing Missing "RISK SCORE" Values
-Replaced missing values with median and then used scaler to normalize. This assures that the data is messured on the same scale. 
+Missing values were imputed using the median, and subsequently, a scaler was applied for normalization. This process ensures that all data is measured on a consistent scale.
 
 ### Grouping Rare Categories in Inspection Outcome
-Group all categories with fewer than 500 observations in the Inspection Outcome variable into an "Other" category.
+Improved readability and model efficiency can be achieved by grouping smaller categories. While individually these categories might not significantly impact the overall analysis, their combined effect will provide a more comprehensive understanding.
 
 ### Standardizing the Inspection Type Variable
-Clean and standardize the Inspection Type variable in the Inspection Dataset.
+Standardize and clean the 'Inspection Type' variable within the Inspection Dataset.
 
-### Generating Dummy Variables for Inspection Dataset
-Create binary/dummy variables for the Inspection Outcome and Inspection Type columns while retaining the original text information.
 
 
 ## Aggregation of the Inspection Dataset
