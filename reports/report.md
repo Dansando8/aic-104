@@ -19,10 +19,9 @@ Improved readability and model efficiency can be achieved by grouping smaller ca
 Standardize and clean the 'Inspection Type' variable within the Inspection Dataset.
 
 
-
 ## Aggregation of the Inspection Dataset
 ### Group Data by Key Identifiers
-Organize the Inspection Dataset by grouping inspections using key identifiers. Use the `groupby` function to group data based on attributes that uniquely define each inspection. Consider factors such as Inspection Number, Elevator ID, and Inspection Date to distinguish between inspections and identify historical inspections effectively.
+On this step the data is grouped by Elevator Id, then the Inpection Number is grouped as a list (because can have many), then also regrouped dates: The earliest as the min and the latest as the max. 
 
 ### Aggregate Previous Inspections
 For each Inspection Number, calculate the count of different Inspection Types and Inspection Outcomes that occurred for the same elevator in the past. Ensure that the aggregation of the "Inspection Outcome" variable excludes the current inspection. This step will help uncover patterns and trends relevant to the current inspection outcome.
