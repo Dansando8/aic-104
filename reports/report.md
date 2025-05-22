@@ -27,7 +27,8 @@ On this step the data is grouped by Elevator Id, then the Inpection Number is gr
 As we want to assure that the Elevator Id is associated with an Inspection we can't arbitrarily keep an unique id. Thus, we can keep the id and create a list with the Inspection Numbers to do the validation. Like this we guarantee that: only contains rows with valid (matched inspections), rows from final_df where the "Inspection_Number" exists in the Inspection Orders dataset (sorted_inspections_order).
 
 ### Filter Data Based on Inspection Order Dataset
-This is important to clean the possible duplicates on data and keep just the ones that exist on Orders. The other elevators are not necessary to do predications. 
+To improve data quality for prediction, it's crucial to eliminate duplicate entries and retain only the elevator data present in existing orders. Other elevator data is not required for this purpose.
+
 
 # Machine Learning / Modeling
 ##  Modeling Part 1
