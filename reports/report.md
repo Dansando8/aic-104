@@ -16,7 +16,7 @@ Missing values were imputed using the median, and subsequently, a scaler was app
 Improved readability and model efficiency can be achieved by grouping smaller categories. While individually these categories might not significantly impact the overall analysis, their combined effect will provide a more comprehensive understanding.
 
 ### Standardizing the Inspection Type Variable
-Standardize and clean the 'Inspection Type' variable within the Inspection Dataset.
+Many models can't make sense of plain text, we transform them into 1s and 0s so data can be interpreted as true or false. 
 
 
 ## Aggregation of the Inspection Dataset
