@@ -20,18 +20,14 @@ Standardize and clean the 'Inspection Type' variable within the Inspection Datas
 
 
 ## Aggregation of the Inspection Dataset
-### Group Data by Key Identifiers
+### Group Data by Key Identifiers & Aggregate Previous Inspections
 On this step the data is grouped by Elevator Id, then the Inpection Number is grouped as a list (because can have many), then also regrouped dates: The earliest as the min and the latest as the max. 
 
-### Aggregate Previous Inspections
-For each Inspection Number, calculate the count of different Inspection Types and Inspection Outcomes that occurred for the same elevator in the past. Ensure that the aggregation of the "Inspection Outcome" variable excludes the current inspection. This step will help uncover patterns and trends relevant to the current inspection outcome.
-
 ### Format Data for Current Inspection Outcome
-Separate the current inspection outcome (Y variable) into its own column, ensuring it is formatted as text. Include the current "Inspection Type" alongside the aggregated historical data. Be cautious of potential data leakage during this process.
+As we want to assure that the Elevator Id is associated with an Inspection we can't arbitrarily keep an unique id. Thus, we can keep the id and create a list with the Inspection Numbers to do the validation. Like this we guarantee that: only contains rows with valid (matched inspections), rows from final_df where the "Inspection_Number" exists in the Inspection Orders dataset (sorted_inspections_order).
 
 ### Filter Data Based on Inspection Order Dataset
-After completing the aggregation, filter the dataset to retain only rows where the Inspection Number exists in the Inspection Order Dataset. This ensures alignment between the two datasets for further analysis.
-
+This is important to clean the possible duplicates on data and keep just the ones that exist on Orders. The other elevators are not necessary to do predications. 
 
 # Machine Learning / Modeling
 ##  Modeling Part 1
@@ -45,7 +41,8 @@ Calculate the baseline score using a simple model or heuristic. For classificati
 3. **Model Testing**: Test several models, such as Logistic Regression, Random Forest, Gradient Boosting, and Support Vector Machines. Use cross-validation to evaluate model performance and compare results.
 
 ### Include a Feature Selection Step
-1. **Add All Features**: Start by including all features in the model.
+1. **Add All Features**: 
+Start by including all features in the model.
 2. **Feature Selection**: Add a feature selection step to the pipeline using methods like Recursive Feature Elimination (RFE) or feature importance from tree-based models.
 3. **Performance Comparison**: Compare the model's performance on the validation set before and after feature selection. Document the impact of feature selection on metrics such as accuracy, precision, recall, or RMSE.
 
